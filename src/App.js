@@ -24,7 +24,7 @@ function App() {
     //Essa funcao altera o state passando o parametro event
     //Por padrao o event eh passado de forma implicita. Nao eh preciso declarar a propriedade na chamada
     const TrocarValorStateComValor = (event) =>{
-      setMinhaVariavelState(parseInt(event.target.value));
+      setMinhaVariavelState(event.target.value);
     }
 
     const multiplicadorOnChangeHandler = (event) =>{
