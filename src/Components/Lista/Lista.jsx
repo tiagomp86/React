@@ -9,6 +9,14 @@ export default () => {
         { id: 3, nome: 'Lapis'}
     ]);
 
+    const UpdateState = () => {
+        setListaProdutos([
+            { id: 1, nome: 'Caneta' },
+            { id: 2, nome: 'Caderno' },
+            { id: 3, nome: 'Lapis'}
+        ]);
+    }
+
     const ProdutoDeleteHandler = (id) => {
         //Busca o index pelo id:
         const produtoIndex = listaProdutos.findIndex(p => p.id === id);
@@ -28,6 +36,7 @@ export default () => {
             {listaProdutos.map((produto, index) => {
                 return <Produto key={produto.id} nome={produto.nome} deleteClickEvent={() => ProdutoDeleteHandler(produto.id)}></Produto>
             })}
+            <button onClick={UpdateState}>Recarregar Lista</button>
         </div>
     );
 }
