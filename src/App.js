@@ -31,17 +31,15 @@ function App() {
 
   const multiplicadorOnChangeHandler = (event) => {
     setStateIncremento({ valor: stateIncremento.valor, incremento: event.target.value });
-    console.log(stateIncremento);
   }
 
   const IncrementarSoma = () => {
-    console.log(stateIncremento.incremento);
+
     if (stateIncremento.incremento === "") {
       alert('Informe um valor');
     }
     else {
       setStateIncremento({ valor: parseInt(stateIncremento.valor) + parseInt(stateIncremento.incremento), incremento: stateIncremento.incremento });
-      console.log(stateIncremento);
     }
   }
 

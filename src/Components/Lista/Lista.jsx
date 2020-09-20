@@ -10,21 +10,17 @@ export default () => {
     ]);
 
     const ProdutoDeleteHandler = (id) => {
-        console.log('excluir id:' + id)
-
         //Busca o index pelo id:
         const produtoIndex = listaProdutos.findIndex(p => p.id === id);
 
         //Copiando o state lista produtos para uma variavel temporaria
         let listaProdutosTemp = [...listaProdutos]; //Essa sintaxe [...] remove a passagem por referencia. criando uma nova variavel. Se nao colocar funciona como um ponteiro.
-        console.log(listaProdutosTemp);
 
+        //O splice remove o item do array:
         listaProdutosTemp.splice(produtoIndex, 1);
-        console.log(listaProdutosTemp);
 
+        //Atualiza o state
         setListaProdutos(listaProdutosTemp);
-        console.log(listaProdutos);
-
     }
 
     return (
